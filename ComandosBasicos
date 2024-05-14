@@ -1,0 +1,37 @@
+#parametros de aceptacion
+"""
+Elaborar un programa en python dentro de Ubuntu que realice lo siguiente:
+1. crear un archivo txt que se llame promedio
+2. Crear una carpeta llamada Calificaciones
+3. Crear otra carpeta llamada primer parcial
+4. Mueve el archivo txt a la carpeta de primer parcial
+5. dentro de la carpeta calificaciones, crea un archivo que se llame comando.py
+6. enlista todas las carpetas / importa la calculadora
+
+"""
+#Carlos Moroni Castellanos Cruz
+import subprocess # libreria para la terminal
+
+def ejecutar(comando):# funcion creada para ejecutar los comandos de terminal
+    subprocess.run(comando,shell=True)
+
+    
+#creamos el menu de opciones para los procesos
+print (' menu principal \n1) Crear un archivo\n2) crear una carpeta llamada calificaciones\n3) Crear una carpeta Primer parcial \n4) mover promedio a primer parcial \n5) Comando.py \n6) ejecutar calcula')
+opcion = input('Ingrese una opcion: ')
+if opcion == '1':
+    ejecutar(" touch promedio.txt")
+if opcion == '2':
+    ejecutar(" mkdir Calificaciones")
+if opcion == '3':
+    ejecutar(" mkdir Primer_Parcial")
+if opcion == '4':
+    ejecutar('mv "promedio.txt" "Primer_Parcial" ')
+if opcion == '5':
+    ejecutar(" touch comando.py")
+    ejecutar('mv "comando.py" "Calificaciones"')
+if opcion == '6':
+    import calculadora#importamos la calculadora
+else:
+    print("adios")
+    
